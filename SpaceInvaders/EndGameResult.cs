@@ -1,6 +1,6 @@
 namespace SpaceInvaders
 {
-    public enum IEndGameResult
+    public enum EndGameResult
     {
         Win,
         GameOver

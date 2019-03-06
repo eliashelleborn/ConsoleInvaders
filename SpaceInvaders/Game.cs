@@ -55,7 +55,7 @@ namespace SpaceInvaders
             // If all enemies are dead, end game
             if (EnemyFleet.Enemies.TrueForAll(x => !x.IsAlive))
             {
-                EndGame(IEndGameResult.Win);
+                EndGame(EndGameResult.Win);
             }
             
             // Handle projectiles
@@ -94,7 +94,7 @@ namespace SpaceInvaders
                     {
                         if (projectile.PositionX >= Player.Position - 1 && projectile.PositionX <= Player.Position + 1)
                         {
-                            EndGame(IEndGameResult.GameOver);
+                            EndGame(EndGameResult.GameOver);
                         }
                     }
                 }
@@ -160,14 +160,16 @@ namespace SpaceInvaders
                 }
 
             } while (key != ConsoleKey.Escape);
+
+            Environment.Exit(0);
         }
 
-        public void EndGame(IEndGameResult gameResult)
+        public void EndGame(EndGameResult gameResult)
         {
             TickTimer.Stop();
             Projectiles.RemoveAll(x => true);
             Console.Clear();
-            if (gameResult == IEndGameResult.Win)
+            if (gameResult == EndGameResult.Win)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.SetCursorPosition(1, 1);
@@ -176,7 +178,7 @@ namespace SpaceInvaders
                 Console.WriteLine("A new game will start in 5 seconds...");
                 Console.ForegroundColor = ConsoleColor.White;
             }
-            if (gameResult == IEndGameResult.GameOver)
+            if (gameResult == EndGameResult.GameOver)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.SetCursorPosition(1, 1);

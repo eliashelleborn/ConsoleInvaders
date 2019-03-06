@@ -85,7 +85,7 @@ namespace SpaceInvaders
             int lowestEnemyPosition = Enemies.FindAll(x => x.IsAlive).Max(x => x.RelativePositionY);
             if (FleetPositionY + lowestEnemyPosition >= Console.WindowHeight - 3)
             {
-                Game.EndGame(IEndGameResult.GameOver);
+                Game.EndGame(EndGameResult.GameOver);
             }
         }
 
