@@ -10,8 +10,8 @@ namespace SpaceInvaders
     {
         public List<Enemy> Enemies = new List<Enemy>();
         public List<int> RowPositions = new List<int>();
-        public int FleetPositionY;
-        public int FleetPositionX;
+        public int FleetPositionY  { get; set; }
+        public int FleetPositionX { get; set; }
         private Game Game;
         private int Amount = 16;
         private Timer TickTimer;

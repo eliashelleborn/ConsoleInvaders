@@ -7,7 +7,7 @@ namespace SpaceInvaders
 {
     public class Game
     {
-        public int Width;
+        public int Width { get; }
         public int Height = 20;
         public Player Player;
         public List<Projectile> Projectiles = new List<Projectile>();

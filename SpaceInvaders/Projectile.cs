@@ -4,9 +4,9 @@ namespace SpaceInvaders
 {
     public class Projectile
     {
-        public int PositionY;
-        public int PositionX;
-        public int Direction;
+        public int PositionY { get; private set; }
+        public int PositionX { get; }
+        public int Direction { get; }
 
         public Projectile(int positionY, int positionX, int direction)
         {

@@ -5,8 +5,8 @@ namespace SpaceInvaders
     public class Enemy
     {
         public bool IsAlive = true;
-        public int RelativePositionX;
-        public int RelativePositionY;
+        public int RelativePositionX { get; }
+        public int RelativePositionY { get; }
         public Enemy(int posX, int posY)
         {
             RelativePositionX = posX;

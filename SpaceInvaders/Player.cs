@@ -5,8 +5,8 @@ namespace SpaceInvaders
 {
     public class Player
     {
-        public int Position;
-        private Game GameInstance;
+        public int Position { get; private set; }
+        private Game GameInstance { get; }
 
         public Player(Game game)
         {
